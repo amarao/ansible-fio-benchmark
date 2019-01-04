@@ -1,0 +1,706 @@
+[{{ fio_name }}]
+{% if fio_description != omit %}
+description={{ fio_description }}
+{% endif %}
+{% if fio_loops != omit %}
+loops={{ fio_loops }}
+{% endif %}
+{% if fio_numjobs != omit %}
+numjobs={{ fio_numjobs }}
+{% endif %}
+{% if fio_runtime != omit %}
+runtime={{ fio_runtime }}
+{% endif %}
+{% if fio_time_based !=omit %}
+time_based={{ fio_time_based }}
+{%endif%}
+{% if fio_startdelay != omit %}
+startdelay={{ fio_startdelay }}
+{% endif %}
+{% if fio_ramp_time != omit %}
+ramp_time={{ fio_ramp_time }}
+{% endif %}
+{% if fio_clocksource != omit %}
+clocksource={{ fio_clocksource }}
+{% endif %}
+{% if fio_gtod_reduce != omit %}
+gtod_reduce={{ fio_gtod_reduce }}
+{% endif %}
+{% if fio_gtod_cpu != omit %}
+gtod_cpu={{ fio_gtod_cpu }}
+{% endif %}
+{% if fio_directory != omit %}
+directory={{ fio_directory }}
+{% endif %}
+{% if fio_filename != omit %}
+filename={{ fio_filename }}
+{% endif %}
+{% if fio_filename_format != omit %}
+filename_format={{ fio_filename_format }}
+{% endif %}
+{% if fio_unique_filename != omit %}
+unique_filename={{ fio_unique_filename }}
+{% endif %}
+{% if fio_opendir != omit %}
+opendir={{ fio_opendir }}
+{% endif %}
+{% if fio_lockfile != omit %}
+lockfile={{ fio_lockfile }}
+{% endif %}
+{% if fio_nrfiles != omit %}
+nrfiles={{ fio_nrfiles }}
+{% endif %}
+{% if fio_openfiles != omit %}
+openfiles={{ fio_openfiles }}
+{% endif %}
+{% if fio_file_service_type != omit %}
+file_service_type={{ fio_file_service_type }}
+{% endif %}
+{% if fio_ioscheduler != omit %}
+ioscheduler={{ fio_ioscheduler }}
+{% endif %}
+{% if fio_create_serialize != omit %}
+create_serialize={{ fio_create_serialize }}
+{% endif %}
+{% if fio_create_fsync != omit %}
+create_fsync={{ fio_create_fsync }}
+{% endif %}
+{% if fio_create_on_open != omit %}
+create_on_open={{ fio_create_on_open }}
+{% endif %}
+{% if fio_create_only != omit %}
+create_only={{ fio_create_only }}
+{% endif %}
+{% if fio_allow_file_create != omit %}
+allow_file_create={{ fio_allow_file_create }}
+{% endif %}
+{% if fio_allow_mounted_write != omit %}
+allow_mounted_write={{ fio_allow_mounted_write }}
+{% endif %}
+{% if fio_pre_read != omit %}
+pre_read={{ fio_pre_read }}
+{% endif %}
+{% if fio_unlink != omit %}
+unlink={{ fio_unlink }}
+{% endif %}
+{% if fio_unlink_each_loop != omit %}
+unlink_each_loop={{ fio_unlink_each_loop }}
+{% endif %}
+{% if fio_zonesize != omit %}
+zonesize={{ fio_zonesize }}
+{% endif %}
+{% if fio_zonerange != omit %}
+zonerange={{ fio_zonerange }}
+{% endif %}
+{% if fio_zoneskip != omit %}
+zoneskip={{ fio_zoneskip }}
+{% endif %}
+{% if fio_direct != omit %}
+direct={{ fio_direct }}
+{% endif %}
+{% if fio_atomic != omit %}
+atomic={{ fio_atomic }}
+{% endif %}
+{% if fio_buffered != omit %}
+buffered={{ fio_buffered }}
+{% endif %}
+{% if fio_readwrite != omit %}
+readwrite={{ fio_readwrite }}
+{% endif %}
+{% if fio_rw != omit %}
+rw={{ fio_rw }}
+{% endif %}
+{% if fio_rw_sequencer != omit %}
+rw_sequencer={{ fio_rw_sequencer }}
+{% endif %}
+{% if fio_unified_rw_reporting != omit %}
+unified_rw_reporting={{ fio_unified_rw_reporting }}
+{% endif %}
+{% if fio_randrepeat != omit %}
+randrepeat={{ fio_randrepeat }}
+{% endif %}
+{% if fio_allrandrepeat != omit %}
+allrandrepeat={{ fio_allrandrepeat }}
+{% endif %}
+{% if fio_randseed != omit %}
+randseed={{ fio_randseed }}
+{% endif %}
+{% if fio_fallocate != omit %}
+fallocate={{ fio_fallocate }}
+{% endif %}
+{% if fio_fadvise_hint != omit %}
+fadvise_hint={{ fio_fadvise_hint }}
+{% endif %}
+{% if fio_write_hint != omit %}
+write_hint={{ fio_write_hint }}
+{% endif %}
+{% if fio_offset != omit %}
+offset={{ fio_offset }}
+{% endif %}
+{% if fio_offset_align != omit %}
+offset_align={{ fio_offset_align }}
+{% endif %}
+{% if fio_offset_increment != omit %}
+offset_increment={{ fio_offset_increment }}
+{% endif %}
+{% if fio_number_ios != omit %}
+number_ios={{ fio_number_ios }}
+{% endif %}
+{% if fio_fsync != omit %}
+fsync={{ fio_fsync }}
+{% endif %}
+{% if fio_fdatasync != omit %}
+fdatasync={{ fio_fdatasync }}
+{% endif %}
+{% if fio_write_barrier != omit %}
+write_barrier={{ fio_write_barrier }}
+{% endif %}
+{% if fio_sync_file_range != omit %}
+sync_file_range={{ fio_sync_file_range }}
+{% endif %}
+{% if fio_overwrite != omit %}
+overwrite={{ fio_overwrite }}
+{% endif %}
+{% if fio_end_fsync != omit %}
+end_fsync={{ fio_end_fsync }}
+{% endif %}
+{% if fio_fsync_on_close != omit %}
+fsync_on_close={{ fio_fsync_on_close }}
+{% endif %}
+{% if fio_rwmixread != omit %}
+rwmixread={{ fio_rwmixread }}
+{% endif %}
+{% if fio_rwmixwrite != omit %}
+rwmixwrite={{ fio_rwmixwrite }}
+{% endif %}
+{% if fio_random_distribution != omit %}
+random_distribution={{ fio_random_distribution }}
+{% endif %}
+{% if fio_percentage_random != omit %}
+percentage_random={{ fio_percentage_random }}
+{% endif %}
+{% if fio_norandommap != omit %}
+norandommap={{ fio_norandommap }}
+{% endif %}
+{% if fio_softrandommap != omit %}
+softrandommap={{ fio_softrandommap }}
+{% endif %}
+{% if fio_random_generator != omit %}
+random_generator={{ fio_random_generator }}
+{% endif %}
+{% if fio_blocksize != omit %}
+blocksize={{ fio_blocksize }}
+{% endif %}
+{% if fio_blocksize_range != omit %}
+blocksize_range={{ fio_blocksize_range }}
+{% endif %}
+{% if fio_bssplit != omit %}
+bssplit={{ fio_bssplit }}
+{% endif %}
+{% if fio_blocksize_unaligned != omit %}
+blocksize_unaligned={{ fio_blocksize_unaligned }}
+{% endif %}
+{% if fio_bs_is_seq_rand != omit %}
+bs_is_seq_rand={{ fio_bs_is_seq_rand }}
+{% endif %}
+{% if fio_blockalign != omit %}
+blockalign={{ fio_blockalign }}
+{% endif %}
+{% if fio_zero_buffers != omit %}
+zero_buffers={{ fio_zero_buffers }}
+{% endif %}
+{% if fio_refill_buffers != omit %}
+refill_buffers={{ fio_refill_buffers }}
+{% endif %}
+{% if fio_scramble_buffers != omit %}
+scramble_buffers={{ fio_scramble_buffers }}
+{% endif %}
+{% if fio_buffer_compress_percentage != omit %}
+buffer_compress_percentage={{ fio_buffer_compress_percentage }}
+{% endif %}
+{% if fio_buffer_compress_chunk != omit %}
+buffer_compress_chunk={{ fio_buffer_compress_chunk }}
+{% endif %}
+{% if fio_buffer_pattern != omit %}
+buffer_pattern={{ fio_buffer_pattern }}
+{% endif %}
+{% if fio_dedupe_percentage != omit %}
+dedupe_percentage={{ fio_dedupe_percentage }}
+{% endif %}
+{% if fio_invalidate != omit %}
+invalidate={{ fio_invalidate }}
+{% endif %}
+{% if fio_sync != omit %}
+sync={{ fio_sync }}
+{% endif %}
+{% if fio_iomem != omit %}
+iomem={{ fio_iomem }}
+{% endif %}
+{% if fio_iomem_align != omit %}
+iomem_align={{ fio_iomem_align }}
+{% endif %}
+{% if fio_hugepage_size != omit %}
+hugepage-size={{ fio_hugepage_size }}
+{% endif %}
+{% if fio_lockmem != omit %}
+lockmem={{ fio_lockmem }}
+{% endif %}
+{% if fio_size != omit %}
+size={{ fio_size }}
+{% endif %}
+{% if fio_io_size != omit %}
+io_size={{ fio_io_size }}
+{% endif %}
+{% if fio_filesize != omit %}
+filesize={{ fio_filesize }}
+{% endif %}
+{% if fio_file_append != omit %}
+file_append={{ fio_file_append }}
+{% endif %}
+{% if fio_fill_device != omit %}
+fill_device={{ fio_fill_device }}
+{% endif %}
+{% if fio_fill_fs != omit %}
+fill_fs={{ fio_fill_fs }}
+{% endif %}
+{% if fio_ioengine != omit %}
+ioengine={{ fio_ioengine }}
+{% endif %}
+{% if fio_userspace_reap != omit %}
+userspace_reap={{ fio_userspace_reap }}
+{% endif %}
+{% if fio_hipri != omit %}
+hipri={{ fio_hipri }}
+{% endif %}
+{% if fio_hipri_percentage != omit %}
+hipri_percentage={{ fio_hipri_percentage }}
+{% endif %}
+{% if fio_cpuload != omit %}
+cpuload={{ fio_cpuload }}
+{% endif %}
+{% if fio_cpuchunks != omit %}
+cpuchunks={{ fio_cpuchunks }}
+{% endif %}
+{% if fio_exit_on_io_done != omit %}
+exit_on_io_done={{ fio_exit_on_io_done }}
+{% endif %}
+{% if fio_namenode != omit %}
+namenode={{ fio_namenode }}
+{% endif %}
+{% if fio_port != omit %}
+port={{ fio_port }}
+{% endif %}
+{% if fio_hostname != omit %}
+hostname={{ fio_hostname }}
+{% endif %}
+{% if fio_interface != omit %}
+interface={{ fio_interface }}
+{% endif %}
+{% if fio_ttl != omit %}
+ttl={{ fio_ttl }}
+{% endif %}
+{% if fio_nodelay != omit %}
+nodelay={{ fio_nodelay }}
+{% endif %}
+{% if fio_protocol != omit %}
+protocol={{ fio_protocol }}
+{% endif %}
+{% if fio_proto != omit %}
+proto={{ fio_proto }}
+{% endif %}
+{% if fio_listen != omit %}
+listen={{ fio_listen }}
+{% endif %}
+{% if fio_pingpong != omit %}
+pingpong={{ fio_pingpong }}
+{% endif %}
+{% if fio_window_size != omit %}
+window_size={{ fio_window_size }}
+{% endif %}
+{% if fio_mss != omit %}
+mss={{ fio_mss }}
+{% endif %}
+{% if fio_donorname != omit %}
+donorname={{ fio_donorname }}
+{% endif %}
+{% if fio_inplace != omit %}
+inplace={{ fio_inplace }}
+{% endif %}
+{% if fio_clustername != omit %}
+clustername={{ fio_clustername }}
+{% endif %}
+{% if fio_rbdname != omit %}
+rbdname={{ fio_rbdname }}
+{% endif %}
+{% if fio_pool != omit %}
+pool={{ fio_pool }}
+{% endif %}
+{% if fio_clientname != omit %}
+clientname={{ fio_clientname }}
+{% endif %}
+{% if fio_busy_poll != omit %}
+busy_poll={{ fio_busy_poll }}
+{% endif %}
+{% if fio_skip_bad != omit %}
+skip_bad={{ fio_skip_bad }}
+{% endif %}
+{% if fio_hdfsdirectory != omit %}
+hdfsdirectory={{ fio_hdfsdirectory }}
+{% endif %}
+{% if fio_chunk_size != omit %}
+chunk_size={{ fio_chunk_size }}
+{% endif %}
+{% if fio_verb != omit %}
+verb={{ fio_verb }}
+{% endif %}
+{% if fio_bindname != omit %}
+bindname={{ fio_bindname }}
+{% endif %}
+{% if fio_readfua != omit %}
+readfua={{ fio_readfua }}
+{% endif %}
+{% if fio_writefua != omit %}
+writefua={{ fio_writefua }}
+{% endif %}
+{% if fio_sg_write_mode != omit %}
+sg_write_mode={{ fio_sg_write_mode }}
+{% endif %}
+{% if fio_iodepth != omit %}
+iodepth={{ fio_iodepth }}
+{% endif %}
+{% if fio_iodepth_batch_submit != omit %}
+iodepth_batch_submit={{ fio_iodepth_batch_submit }}
+{% endif %}
+{% if fio_iodepth_batch != omit %}
+iodepth_batch={{ fio_iodepth_batch }}
+{% endif %}
+{% if fio_iodepth_batch_complete_min != omit %}
+iodepth_batch_complete_min={{ fio_iodepth_batch_complete_min }}
+{% endif %}
+{% if fio_iodepth_batch_complete != omit %}
+iodepth_batch_complete={{ fio_iodepth_batch_complete }}
+{% endif %}
+{% if fio_iodepth_batch_complete_max != omit %}
+iodepth_batch_complete_max={{ fio_iodepth_batch_complete_max }}
+{% endif %}
+{% if fio_iodepth_low != omit %}
+iodepth_low={{ fio_iodepth_low }}
+{% endif %}
+{% if fio_serialize_overlap != omit %}
+serialize_overlap={{ fio_serialize_overlap }}
+{% endif %}
+{% if fio_io_submit_mode != omit %}
+io_submit_mode={{ fio_io_submit_mode }}
+{% endif %}
+{% if fio_thinktime != omit %}
+thinktime={{ fio_thinktime }}
+{% endif %}
+{% if fio_thinktime_spin != omit %}
+thinktime_spin={{ fio_thinktime_spin }}
+{% endif %}
+{% if fio_thinktime_blocks != omit %}
+thinktime_blocks={{ fio_thinktime_blocks }}
+{% endif %}
+{% if fio_rate != omit %}
+rate={{ fio_rate }}
+{% endif %}
+{% if fio_rate_min != omit %}
+rate_min={{ fio_rate_min }}
+{% endif %}
+{% if fio_rate_iops != omit %}
+rate_iops={{ fio_rate_iops }}
+{% endif %}
+{% if fio_rate_iops_min != omit %}
+rate_iops_min={{ fio_rate_iops_min }}
+{% endif %}
+{% if fio_rate_process != omit %}
+rate_process={{ fio_rate_process }}
+{% endif %}
+{% if fio_rate_ignore_thinktime != omit %}
+rate_ignore_thinktime={{ fio_rate_ignore_thinktime }}
+{% endif %}
+{% if fio_latency_target != omit %}
+latency_target={{ fio_latency_target }}
+{% endif %}
+{% if fio_latency_window != omit %}
+latency_window={{ fio_latency_window }}
+{% endif %}
+{% if fio_latency_percentile != omit %}
+latency_percentile={{ fio_latency_percentile }}
+{% endif %}
+{% if fio_max_latency != omit %}
+max_latency={{ fio_max_latency }}
+{% endif %}
+{% if fio_rate_cycle != omit %}
+rate_cycle={{ fio_rate_cycle }}
+{% endif %}
+{% if fio_write_iolog != omit %}
+write_iolog={{ fio_write_iolog }}
+{% endif %}
+{% if fio_read_iolog != omit %}
+read_iolog={{ fio_read_iolog }}
+{% endif %}
+{% if fio_replay_no_stall != omit %}
+replay_no_stall={{ fio_replay_no_stall }}
+{% endif %}
+{% if fio_replay_time_scale != omit %}
+replay_time_scale={{ fio_replay_time_scale }}
+{% endif %}
+{% if fio_replay_redirect != omit %}
+replay_redirect={{ fio_replay_redirect }}
+{% endif %}
+{% if fio_replay_align != omit %}
+replay_align={{ fio_replay_align }}
+{% endif %}
+{% if fio_replay_scale != omit %}
+replay_scale={{ fio_replay_scale }}
+{% endif %}
+{% if fio_replay_skip != omit %}
+replay_skip={{ fio_replay_skip }}
+{% endif %}
+{% if fio_wait_for != omit %}
+wait_for={{ fio_wait_for }}
+{% endif %}
+{% if fio_nice != omit %}
+nice={{ fio_nice }}
+{% endif %}
+{% if fio_prio != omit %}
+prio={{ fio_prio }}
+{% endif %}
+{% if fio_prioclass != omit %}
+prioclass={{ fio_prioclass }}
+{% endif %}
+{% if fio_cpus_allowed != omit %}
+cpus_allowed={{ fio_cpus_allowed }}
+{% endif %}
+{% if fio_cpus_allowed_policy != omit %}
+cpus_allowed_policy={{ fio_cpus_allowed_policy }}
+{% endif %}
+{% if fio_cpumask != omit %}
+cpumask={{ fio_cpumask }}
+{% endif %}
+{% if fio_numa_cpu_nodes != omit %}
+numa_cpu_nodes={{ fio_numa_cpu_nodes }}
+{% endif %}
+{% if fio_numa_mem_policy != omit %}
+numa_mem_policy={{ fio_numa_mem_policy }}
+{% endif %}
+{% if fio_cgroup != omit %}
+cgroup={{ fio_cgroup }}
+{% endif %}
+{% if fio_cgroup_weight != omit %}
+cgroup_weight={{ fio_cgroup_weight }}
+{% endif %}
+{% if fio_cgroup_nodelete != omit %}
+cgroup_nodelete={{ fio_cgroup_nodelete }}
+{% endif %}
+{% if fio_flow_id != omit %}
+flow_id={{ fio_flow_id }}
+{% endif %}
+{% if fio_flow != omit %}
+flow={{ fio_flow }}
+{% endif %}
+{% if fio_flow_watermark != omit %}
+flow_watermark={{ fio_flow_watermark }}
+{% endif %}
+{% if fio_flow_sleep != omit %}
+flow_sleep={{ fio_flow_sleep }}
+{% endif %}
+{% if fio_stonewall != omit %}
+stonewall={{ fio_stonewall }}
+{% endif %}
+{% if fio_wait_for_previous != omit %}
+wait_for_previous={{ fio_wait_for_previous }}
+{% endif %}
+{% if fio_exitall != omit %}
+exitall={{ fio_exitall }}
+{% endif %}
+{% if fio_exec_prerun != omit %}
+exec_prerun={{ fio_exec_prerun }}
+{% endif %}
+{% if fio_exec_postrun != omit %}
+exec_postrun={{ fio_exec_postrun }}
+{% endif %}
+{% if fio_uid != omit %}
+uid={{ fio_uid }}
+{% endif %}
+{% if fio_gid != omit %}
+gid={{ fio_gid }}
+{% endif %}
+{% if fio_verify_only != omit %}
+verify_only={{ fio_verify_only }}
+{% endif %}
+{% if fio_do_verify != omit %}
+do_verify={{ fio_do_verify }}
+{% endif %}
+{% if fio_verify != omit %}
+verify={{ fio_verify }}
+{% endif %}
+{% if fio_verify_offset != omit %}
+verify_offset={{ fio_verify_offset }}
+{% endif %}
+{% if fio_verify_interval != omit %}
+verify_interval={{ fio_verify_interval }}
+{% endif %}
+{% if fio_verify_pattern != omit %}
+verify_pattern={{ fio_verify_pattern }}
+{% endif %}
+{% if fio_verify_fatal != omit %}
+verify_fatal={{ fio_verify_fatal }}
+{% endif %}
+{% if fio_verify_dump != omit %}
+verify_dump={{ fio_verify_dump }}
+{% endif %}
+{% if fio_verify_async != omit %}
+verify_async={{ fio_verify_async }}
+{% endif %}
+{% if fio_verify_async_cpus != omit %}
+verify_async_cpus={{ fio_verify_async_cpus }}
+{% endif %}
+{% if fio_verify_backlog != omit %}
+verify_backlog={{ fio_verify_backlog }}
+{% endif %}
+{% if fio_verify_backlog_batch != omit %}
+verify_backlog_batch={{ fio_verify_backlog_batch }}
+{% endif %}
+{% if fio_verify_state_save != omit %}
+verify_state_save={{ fio_verify_state_save }}
+{% endif %}
+{% if fio_verify_state_load != omit %}
+verify_state_load={{ fio_verify_state_load }}
+{% endif %}
+{% if fio_trim_percentage != omit %}
+trim_percentage={{ fio_trim_percentage }}
+{% endif %}
+{% if fio_trim_verify_zero != omit %}
+trim_verify_zero={{ fio_trim_verify_zero }}
+{% endif %}
+{% if fio_trim_backlog != omit %}
+trim_backlog={{ fio_trim_backlog }}
+{% endif %}
+{% if fio_trim_backlog_batch != omit %}
+trim_backlog_batch={{ fio_trim_backlog_batch }}
+{% endif %}
+{% if fio_experimental_verify != omit %}
+experimental_verify={{ fio_experimental_verify }}
+{% endif %}
+{% if fio_steadystate != omit %}
+steadystate={{ fio_steadystate }}
+{% endif %}
+{% if fio_ss != omit %}
+ss={{ fio_ss }}
+{% endif %}
+{% if fio_steadystate_duration != omit %}
+steadystate_duration={{ fio_steadystate_duration }}
+{% endif %}
+{% if fio_ss_dur != omit %}
+ss_dur={{ fio_ss_dur }}
+{% endif %}
+{% if fio_steadystate_ramp_time != omit %}
+steadystate_ramp_time={{ fio_steadystate_ramp_time }}
+{% endif %}
+{% if fio_ss_ramp != omit %}
+ss_ramp={{ fio_ss_ramp }}
+{% endif %}
+{% if fio_per_job_logs != omit %}
+per_job_logs={{ fio_per_job_logs }}
+{% endif %}
+{% if fio_group_reporting != omit %}
+group_reporting={{ fio_group_reporting }}
+{% endif %}
+{% if fio_new_group != omit %}
+new_group={{ fio_new_group }}
+{% endif %}
+{% if fio_stats != omit %}
+stats={{ fio_stats }}
+{% endif %}
+{% if fio_write_bw_log != omit %}
+write_bw_log={{ fio_write_bw_log }}
+{% endif %}
+{% if fio_write_lat_log != omit %}
+write_lat_log={{ fio_write_lat_log }}
+{% endif %}
+{% if fio_write_hist_log != omit %}
+write_hist_log={{ fio_write_hist_log }}
+{% endif %}
+{% if fio_write_iops_log != omit %}
+write_iops_log={{ fio_write_iops_log }}
+{% endif %}
+{% if fio_log_avg_msec != omit %}
+log_avg_msec={{ fio_log_avg_msec }}
+{% endif %}
+{% if fio_log_hist_msec != omit %}
+log_hist_msec={{ fio_log_hist_msec }}
+{% endif %}
+{% if fio_log_hist_coarseness != omit %}
+log_hist_coarseness={{ fio_log_hist_coarseness }}
+{% endif %}
+{% if fio_log_max_value != omit %}
+log_max_value={{ fio_log_max_value }}
+{% endif %}
+{% if fio_log_offset != omit %}
+log_offset={{ fio_log_offset }}
+{% endif %}
+{% if fio_log_compression != omit %}
+log_compression={{ fio_log_compression }}
+{% endif %}
+{% if fio_log_compression_cpus != omit %}
+log_compression_cpus={{ fio_log_compression_cpus }}
+{% endif %}
+{% if fio_log_store_compressed != omit %}
+log_store_compressed={{ fio_log_store_compressed }}
+{% endif %}
+{% if fio_log_unix_epoch != omit %}
+log_unix_epoch={{ fio_log_unix_epoch }}
+{% endif %}
+{% if fio_block_error_percentiles != omit %}
+block_error_percentiles={{ fio_block_error_percentiles }}
+{% endif %}
+{% if fio_bwavgtime != omit %}
+bwavgtime={{ fio_bwavgtime }}
+{% endif %}
+{% if fio_iopsavgtime != omit %}
+iopsavgtime={{ fio_iopsavgtime }}
+{% endif %}
+{% if fio_disk_util != omit %}
+disk_util={{ fio_disk_util }}
+{% endif %}
+{% if fio_disable_lat != omit %}
+disable_lat={{ fio_disable_lat }}
+{% endif %}
+{% if fio_disable_clat != omit %}
+disable_clat={{ fio_disable_clat }}
+{% endif %}
+{% if fio_disable_slat != omit %}
+disable_slat={{ fio_disable_slat }}
+{% endif %}
+{% if fio_disable_bw_measurement != omit %}
+disable_bw_measurement={{ fio_disable_bw_measurement }}
+{% endif %}
+{% if fio_disable_bw != omit %}
+disable_bw={{ fio_disable_bw }}
+{% endif %}
+{% if fio_clat_percentiles != omit %}
+clat_percentiles={{ fio_clat_percentiles }}
+{% endif %}
+{% if fio_lat_percentiles != omit %}
+lat_percentiles={{ fio_lat_percentiles }}
+{% endif %}
+{% if fio_percentile_list != omit %}
+percentile_list={{ fio_percentile_list }}
+{% endif %}
+{% if fio_significant_figures != omit %}
+significant_figures={{ fio_significant_figures }}
+{% endif %}
+{% if fio_exitall_on_error != omit %}
+exitall_on_error={{ fio_exitall_on_error }}
+{% endif %}
+{% if fio_continue_on_error != omit %}
+continue_on_error={{ fio_continue_on_error }}
+{% endif %}
+{% if fio_ignore_error != omit %}
+ignore_error={{ fio_ignore_error }}
+{% endif %}
+{% if fio_error_dump != omit %}
+error_dump={{ fio_error_dump }}
+{% endif %}

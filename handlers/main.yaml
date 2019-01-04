@@ -1,0 +1,4 @@
+---
+- name: install fio.service
+  become: true
+  systemd: name=fio.service daemon_reload=true enabled=true

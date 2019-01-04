@@ -1,0 +1,11 @@
+#managed by fio-benchmark role for Ansible
+[Unit]
+Description=Fio benchmark
+[Service]
+ExecStart=/usr/bin/fio /etc/fio.conf --output-format {{ fio_output_format }} --output {{ fio_output }}
+{% if fio_mode == 'loop' %}
+Type=simple
+{% else %}
+Type=oneshot
+{% endif %}
+{% if fio_mode == 'loop' %}Restart=always{% endif %}

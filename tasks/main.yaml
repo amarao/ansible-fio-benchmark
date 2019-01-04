@@ -1,0 +1,16 @@
+---
+- name: fio-benchmark | Install fio
+  become: true
+  apt: name=fio state=present
+- name: fio-benchmark | Configure systemd service for fio
+  become: true
+  template:
+    src: fio.service.j2
+    dest: /etc/systemd/system/fio.service
+  notify:
+    - install fio.service
+- name: fio-benchmark | Configure fio job
+  become: true
+  template:
+    src: fio.conf.j2
+    dest: /etc/fio.conf
