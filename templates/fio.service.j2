@@ -3,4 +3,12 @@
 Description=Fio benchmark
 [Service]
 ExecStart=/usr/bin/fio /etc/fio.conf --output-format {{ fio_output_format }} --output {{ fio_output }}
-Restart={% if fio_mode == 'loop' %}always{% else %}never{% endif %}
+Restart={% if fio_mode == 'loop' %}always{% else %}never
+{% endif %}
+{% if fio_mode == 'loop' %}
+TimeoutStopSec={{ fio_loop_kill_timeout }}
+SendSIGKILL=yes
+{%  else %}
+TimeoutStopSec={{ fio_once_kill_timeout }}
+SendSIGKILL=yes
+{% endif %}

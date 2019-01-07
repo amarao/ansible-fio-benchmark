@@ -1,5 +1,7 @@
 ---
 fio_mode: loop  # or 'once'
+fio_once_kill_timeout: 60
+fio_loop_kill_timeout: 2
 # FIO options, see man fio, add 'fio_' before argument name, and replace '-' with '_'
 fio_output_format: json # or terse, normal
 fio_output: /var/log/fio.log
